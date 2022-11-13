@@ -1,4 +1,4 @@
-package strings;
+package strings.test;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 
 import strings.Algorithm;
+import strings.Utils;
 
 import org.junit.Test;
 
