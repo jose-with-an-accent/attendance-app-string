@@ -1,7 +1,6 @@
 package strings.test;
 
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
@@ -26,7 +25,7 @@ public class StringTest {
             String sortedResult[] = Algorithm.sort(exampleData);
             
             Arrays.sort(exampleData);
-
+            System.out.println("Expected: " + exampleData + ", got " + sortedResult);
             assertArrayEquals(exampleData, sortedResult);
 
             

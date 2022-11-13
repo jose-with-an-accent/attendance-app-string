@@ -48,23 +48,24 @@ public class AttendanceApp {
                         return;
                     }
                     FileWriter writer = new FileWriter(new File("report"));
-                    writer.append("NAME, STATUS");
-                    ArrayList<String >studentArray = new ArrayList<>();
+                    writer.append("NAME, STATUS\n");
+                    ArrayList<String>studentArray = new ArrayList<>();
                     for (Entry<String, Status> s : students.entrySet()) {
                     	if (s.getValue() == Status.PRESENT) {
-                    		studentArray.add(s.getKey());
+                    		studentArray.add(s.getKey() + " present");
                     	}
                     }
+                    String[] arr = Algorithm.sort(studentArray.toArray(new String[0]));
 //                    studentArray = new ArrayList<String>(sort(Arrays.asList(studentArray).toArray())); this would be how the sorting algorithm could be implemented
                     
                     System.out.println("Report:");
-                    for (String s: studentArray) {
+                    for (String s: arr) {
                     	writer.write(s + "\n");
                     }
                     writer.append("Present students have been marked.");
                     writer.close();
                     System.out.println("Report has been generated.");
-                    break;
+                    return;
                 case "Q":
                     System.out.println("Quit?");
                     if (reader.nextLine() == "Y") {
