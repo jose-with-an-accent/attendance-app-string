@@ -12,11 +12,12 @@ public class App {
 
     public static Map<String, Status> students;
     public static Scanner reader;
+    
+    public static String[] sort(String[] a) {
+        sort(a, 0, a.length - 1, 0);
+        return a;
 
-    public static void sort(String[] a)
-	{
-		sort(a, 0, a.length - 1, 0);
-	}
+    } 
 	public static void sort(String[] a, int lo, int hi, int d)
 	{
 		if (hi <= lo) 
