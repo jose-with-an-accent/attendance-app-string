@@ -23,15 +23,15 @@ public class Utils {
 			}
 			
 		}
-		public static String[] filler ()
+		public static String[] filler (int arrLength, int strLength)
 		{
 			//returns String[] with 50 random entries of length 10
 			String potentials = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 			List<String> strings = new ArrayList<String>();
-			for (int i=0;i<50;i++)
+			for (int i=0;i<arrLength;i++)
 			{
 				StringBuilder randomword = new StringBuilder();
-				for (int j=0;j<10;j++)
+				for (int j=0;j<strLength;j++)
 				{
 					int picker = (int)(potentials.length()*Math.random());
 					randomword.append(potentials.charAt(picker));

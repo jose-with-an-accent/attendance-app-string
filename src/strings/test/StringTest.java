@@ -2,6 +2,7 @@ package strings.test;
 
 import static org.junit.Assert.assertArrayEquals;
 
+import java.time.Instant;
 import java.util.Arrays;
 
 import strings.Algorithm;
@@ -21,7 +22,7 @@ public class StringTest {
     @Test
     public void autoTest() {
         for (int i = 0; i < 4; i++) {
-            String exampleData[] = Utils.filler();
+            String exampleData[] = Utils.filler(50, 10);
             String sortedResult[] = Algorithm.sort(exampleData);
             
             Arrays.sort(exampleData);
@@ -31,5 +32,22 @@ public class StringTest {
             
 
         }
+    }
+    @Test
+    public void longTest() {
+        int ARR_LENGTH = 500;
+        int STR_LENGTH = 30;
+
+        long before = Instant.now().toEpochMilli();
+
+        String exampleData[] = Utils.filler(50, 10);
+        String sortedResult[] = Algorithm.sort(exampleData);
+        Arrays.sort(exampleData);
+
+        long milliseconds = Instant.now().minusMillis(before).toEpochMilli();
+
+        System.out.println("Took " + milliseconds + "ms to sort " + ARR_LENGTH + " strings with length " + STR_LENGTH);
+
+        assertArrayEquals(exampleData, sortedResult);
     }
 }
