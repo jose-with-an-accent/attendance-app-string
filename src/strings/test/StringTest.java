@@ -22,7 +22,7 @@ public class StringTest {
     @Test
     public void autoTest() {
         for (int i = 0; i < 4; i++) {
-            String exampleData[] = Utils.filler(50, 10);
+            String exampleData[] = Utils.filler(10, 6);
             String sortedResult[] = Algorithm.sort(exampleData);
             
             Arrays.sort(exampleData);
