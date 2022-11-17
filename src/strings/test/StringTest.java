@@ -40,7 +40,7 @@ public class StringTest {
 
         long before = Instant.now().toEpochMilli();
 
-        String exampleData[] = Utils.filler(50, 10);
+        String exampleData[] = Utils.filler(ARR_LENGTH, STR_LENGTH);
         String sortedResult[] = Algorithm.sort(exampleData);
         Arrays.sort(exampleData);
 
